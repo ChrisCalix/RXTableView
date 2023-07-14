@@ -44,11 +44,11 @@ bSub.onNext("Bs ex 3")
 // Replay Subject
 print("\nReplay Subject")
 
-let rSub = ReplaySubject<String>.create(bufferSize: 2)
-rSub.onNext("Rs ex 1")
-rSub.onNext("Rs ex 2")
-rSub.onNext("Rs ex 3")
-rSub.subscribe(onNext: { elem in
+let rSub = ReplaySubject<Int>.create(bufferSize: 2)
+rSub.onNext(1)
+rSub.onNext(2)
+rSub.onNext(3)
+rSub.map{ "Str \($0)" }.subscribe(onNext: { elem in
     print(elem)
 })
 
@@ -86,3 +86,5 @@ bRel.subscribe(onNext: { elem in
     print(elem)
 })
 bRel.accept("bRel ex 4")
+
+// Map Operator
