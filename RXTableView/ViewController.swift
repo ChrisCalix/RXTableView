@@ -39,7 +39,7 @@ class ViewController: UIViewController {
             .subscribe(onNext: { object in
                 print("working")
                 let foodVC = self.storyboard?.instantiateViewController(withIdentifier: "FoodVC") as! FoodDetailsViewController
-                foodVC.imageName = object.image
+                foodVC.imageName.accept(object.image)
                 self.navigationController?.pushViewController(foodVC, animated: true)
             })
             .disposed(by: disposableBag)
