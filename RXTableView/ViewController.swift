@@ -9,11 +9,20 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UISearchBarDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
-    private let tableViewItems = Observable.just([
+    private let tableViewItems = BehaviorRelay(value: [
+        Food(name: "Hamburguer", image: "square.and.arrow.up"),
+        Food(name: "Pizza", image: "pencil.circle.fill"),
+        Food(name: "Salmon", image: "lasso"),
+        Food(name: "Spagueti", image: "trash"),
+        Food(name: "Hamburguer", image: "square.and.arrow.up"),
+        Food(name: "Pizza", image: "pencil.circle.fill"),
+        Food(name: "Salmon", image: "lasso"),
+        Food(name: "Spagueti", image: "trash"),
         Food(name: "Hamburguer", image: "square.and.arrow.up"),
         Food(name: "Pizza", image: "pencil.circle.fill"),
         Food(name: "Salmon", image: "lasso"),
@@ -24,7 +33,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableViewItems.bind(to: tableView
+        searchBar.rx.text.orEmpty
+            .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
+            .map { query in
+                self.tableViewItems.value.filter { food in
+                    query.isEmpty || food.name.lowercased().contains(query.lowercased())
+                }
+            }
+            .bind(to: tableView
             .rx
             .items(cellIdentifier: "Cell", cellType: FoodTableViewCell.self)) { tableView, items, cell in
                 cell.foodLabel.text = items.name
