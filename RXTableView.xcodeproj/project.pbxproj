@@ -18,6 +18,8 @@
 		C389E7F32A60E294003BE120 /* FoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C389E7F22A60E294003BE120 /* FoodTableViewCell.swift */; };
 		C389E7F52A60E3BB003BE120 /* FoodDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C389E7F42A60E3BB003BE120 /* FoodDetailsViewController.swift */; };
 		C3D305452A61B69F00C66650 /* SectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D305442A61B69F00C66650 /* SectionModel.swift */; };
+		C3D305472A61BE4900C66650 /* LoginViewConrtoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D305462A61BE4900C66650 /* LoginViewConrtoller.swift */; };
+		C3D3054A2A61CD4400C66650 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D305492A61CD4400C66650 /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		C389E7F42A60E3BB003BE120 /* FoodDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailsViewController.swift; sourceTree = "<group>"; };
 		C389E7F62A60EB7D003BE120 /* RSwiftRxCocoaPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = RSwiftRxCocoaPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		C3D305442A61B69F00C66650 /* SectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionModel.swift; sourceTree = "<group>"; };
+		C3D305462A61BE4900C66650 /* LoginViewConrtoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewConrtoller.swift; sourceTree = "<group>"; };
+		C3D305492A61CD4400C66650 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,7 @@
 		C389E7DA2A60D8BA003BE120 /* RXTableView */ = {
 			isa = PBXGroup;
 			children = (
+				C3D305482A61CD3100C66650 /* Utils */,
 				C389E7EF2A60E1D2003BE120 /* Models */,
 				C389E7DB2A60D8BA003BE120 /* AppDelegate.swift */,
 				C389E7DD2A60D8BA003BE120 /* SceneDelegate.swift */,
@@ -100,6 +105,7 @@
 				C389E7E92A60D8BB003BE120 /* Info.plist */,
 				C389E7F22A60E294003BE120 /* FoodTableViewCell.swift */,
 				C389E7F42A60E3BB003BE120 /* FoodDetailsViewController.swift */,
+				C3D305462A61BE4900C66650 /* LoginViewConrtoller.swift */,
 			);
 			path = RXTableView;
 			sourceTree = "<group>";
@@ -111,6 +117,14 @@
 				C3D305442A61B69F00C66650 /* SectionModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		C3D305482A61CD3100C66650 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C3D305492A61CD4400C66650 /* Utils.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,7 +245,9 @@
 				C389E7E02A60D8BA003BE120 /* ViewController.swift in Sources */,
 				C389E7F12A60E1D7003BE120 /* Food.swift in Sources */,
 				C389E7F32A60E294003BE120 /* FoodTableViewCell.swift in Sources */,
+				C3D3054A2A61CD4400C66650 /* Utils.swift in Sources */,
 				C389E7DC2A60D8BA003BE120 /* AppDelegate.swift in Sources */,
+				C3D305472A61BE4900C66650 /* LoginViewConrtoller.swift in Sources */,
 				C389E7DE2A60D8BA003BE120 /* SceneDelegate.swift in Sources */,
 				C3D305452A61B69F00C66650 /* SectionModel.swift in Sources */,
 				C389E7F52A60E3BB003BE120 /* FoodDetailsViewController.swift in Sources */,

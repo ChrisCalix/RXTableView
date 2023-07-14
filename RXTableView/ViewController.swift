@@ -64,16 +64,16 @@ class ViewController: UIViewController, UISearchBarDelegate {
             .disposed(by: disposableBag)
         
         // Using model selected
-//        tableView
-//            .rx
-//            .modelSelected(Food.self)
-//            .subscribe(onNext: { object in
-//                print("working")
-//                let foodVC = self.storyboard?.instantiateViewController(withIdentifier: "FoodVC") as! FoodDetailsViewController
-//                foodVC.imageName.accept(object.image)
-//                self.navigationController?.pushViewController(foodVC, animated: true)
-//            })
-//            .disposed(by: disposableBag)
+        tableView
+            .rx
+            .modelSelected(Food.self)
+            .subscribe(onNext: { object in
+                print("working")
+                let foodVC = self.storyboard?.instantiateViewController(withIdentifier: "FoodVC") as! FoodDetailsViewController
+                foodVC.imageName.accept(object.image)
+                self.navigationController?.pushViewController(foodVC, animated: true)
+            })
+            .disposed(by: disposableBag)
         
         // Using item selected get the indexPath
 //        tableView
