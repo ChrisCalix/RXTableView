@@ -26,7 +26,7 @@ print("\nPusblish Subject")
 let pSub = PublishSubject<String>()
 pSub.onNext("PS example 1")
 
-let ob1 = pSub.subscribe(onNext: { elem in
+pSub.subscribe(onNext: { elem in
     print(elem)
 })
 pSub.onNext("PS example 2")
@@ -36,7 +36,7 @@ print("\nBehavior Subject")
 
 let bSub = BehaviorSubject<String>(value: "BS ex 1")
 bSub.onNext("Bs ex 2")
-let ob2 = bSub.subscribe(onNext: { elem in
+bSub.subscribe(onNext: { elem in
     print(elem)
 })
 bSub.onNext("Bs ex 3")
@@ -48,12 +48,41 @@ let rSub = ReplaySubject<String>.create(bufferSize: 2)
 rSub.onNext("Rs ex 1")
 rSub.onNext("Rs ex 2")
 rSub.onNext("Rs ex 3")
-let ob3 = rSub.subscribe(onNext: { elem in
+rSub.subscribe(onNext: { elem in
     print(elem)
 })
 
 // Async Subject
+print("\nAsync Subject")
 
+let aSub = AsyncSubject<String>()
+aSub.onNext("As ex 1")
+aSub.onNext("As ex 2")
+aSub.onCompleted()
+aSub.onNext("As ex 3")
+
+aSub.subscribe(onNext: { elem in
+    print(elem)
+})
 // Publish Relay
+print("\nPublis Relay")
+
+let pRel = PublishRelay<String>()
+pRel.accept("pRel Ex 1")
+
+pRel.subscribe(onNext: { elem in
+    print(elem)
+})
+
+pRel.accept("pRel Ex 2")
+pRel.accept("pRel Ex 3")
 
 // Behavior Relay
+print("\nBehavior Relay")
+let bRel = BehaviorRelay<String>(value: "bRel ex 1")
+bRel.accept("bRel ex 2")
+bRel.accept("bRel ex 3")
+bRel.subscribe(onNext: { elem in
+    print(elem)
+})
+bRel.accept("bRel ex 4")
