@@ -22,15 +22,12 @@ class LoginViewConrtoller: UIViewController {
         super.viewDidLoad()
         self.title = "Login"
         
-        let observable1 = self.usernameTextField.rx.text.orEmpty
-        let observable2 = self.passwordTextField.rx.text.orEmpty
-        
-        let ovservableCombined = Observable.combineLatest(observable1, observable2)
-        
         self.loginButton
             .rx
             .tap
-            .withLatestFrom(ovservableCombined)
+            .withLatestFrom(Observable.combineLatest(
+                usernameTextField.rx.text.orEmpty,
+                passwordTextField.rx.text.orEmpty))
             .subscribe(onNext: {
                 self.login(user: $0, pass: $1)
             })
